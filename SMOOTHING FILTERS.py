@@ -1,72 +1,30 @@
-
-###Developed By : 
-###Register Number: 
-### Smoothing Filters
-# In[1]:Using Averaging Filter
-
-
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
-image1=cv2.imread("")
-image2=cv2.cvtColor(image1,cv2.COLOR_)
-kernel=np.ones
-image3=cv2.filter2D(image2,,kernel)
-plt.figure(figsize=())
-plt.subplot(1,2,1)
-plt.imshow(image2)
+
+# Load the image
+image1 = cv2.imread("nature.jpg")
+
+# Convert the image to grayscale
+image2 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+
+# Apply Gaussian blur with a kernel size of 5x5 and sigmaX (standard deviation) of 0 (calculated automatically)
+gaussian_blur = cv2.GaussianBlur(image2, (5, 5), 0)
+
+# Create the figure and subplots
+plt.figure(figsize=(8, 8))
+
+# Display the original image
+plt.subplot(1, 2, 1)
+plt.imshow(image2, cmap='gray')
 plt.title("Original Image")
 plt.axis("off")
-plt.subplot()
 
-
-# In[2]:Using Weighted Averaging Filter
-
-
-kernel1=
-plt.figure(figsize=(8,8))
-plt.subplot(1,)
-
-plt.title("Original Image")
-plt.axis("off")
-plt.subplot(1,2,2)
-plt.imshow(image3)
-plt.title("Weighted Average Filter Image")
-plt.axis("off")
-plt.show()
-
-
-# In[3]:Using Gaussian Filter
-
-
-gaussian_blur=cv2.GaussianBlur()
-plt.figure(figsize=(8,8))
-plt.subplot(1,2,1)
-plt.imshow(image2)
-plt.title("Original Image")
-plt.axis("off")
-plt.subplot(1,2,2)
-plt.imshow(gaussian_blur)
+# Display the Gaussian blurred image
+plt.subplot(1, 2, 2)
+plt.imshow(gaussian_blur, cmap='gray')
 plt.title("Gaussian Blur")
 plt.axis("off")
+
+# Show the plot
 plt.show()
-
-
-
-
-# In[4]:Using Median Filter
-
-
-median=
-plt.figure(figsize=(8,8))
-plt.subplot(1,2,1)
-plt.imshow(image2)
-plt.title("Original Image")
-plt.axis("off")
-plt.subplot(1,)
-
-
-
-
-
-
